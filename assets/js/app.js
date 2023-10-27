@@ -1,6 +1,6 @@
 $(() => {
   const marker = $('#marker');
-  const nav_links = $('.nav-menu ul li');
+  const nav_links = $('.nav-menu ul .nav-link');
   console.log(nav_links);
 
   function indicator(e) {

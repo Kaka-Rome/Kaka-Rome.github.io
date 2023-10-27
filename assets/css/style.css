@@ -16,6 +16,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
+  font-size: 1.08rem;
 }
 
 /* width */
@@ -170,7 +171,51 @@ body{
 .navbar .nav-menu .nav-link{
   color: var(--light);
   text-decoration: none;
+  position: relative;
 }
+
+.navbar .nav-menu .nav-sub:hover .submenu{
+  opacity: 1;
+  top: 28px;
+}
+
+.navbar .nav-menu .submenu{
+  top: 80px;
+  position: absolute;
+  min-width: 120px;
+  text-align: start;
+  height: fit-content;
+  padding: 1rem;
+  background-color: var(--main-background);
+  color: var(--text-color);
+  opacity: 0;
+  transition: all 300ms;
+}
+
+.navbar .nav-menu .submenu ul{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+}
+
+.navbar .nav-menu .submenu ul li{
+  display: block;
+  text-align: start;
+  width: 100%;
+}
+
+.navbar .nav-menu .submenu ul li a{
+  text-decoration: none;
+  transition: all 200ms;
+  font-weight: 600;
+}
+
+.navbar .nav-menu .submenu ul li a:hover{
+  color: var(--primary-hover);
+  opacity: .5;
+}
+
 
 #marker{
   z-index: -1;
@@ -256,7 +301,7 @@ body{
 }
 
 .first-section{
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -284,4 +329,41 @@ body{
   width: 100%!important;
   height: auto!important;
   transition: .3s;
+}
+
+.second-section{
+  height: 100vh;
+  width: 100%;
+}
+
+
+.about-me{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.about-me .content{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.about-me .content p{
+  margin-bottom: 1rem;
+}
+.about-me .content p .display{
+  display: inline;
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.about-me .img-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.about-me .img-content img{
+  width: 70%;
+  height: auto;
+  object-fit: contain;
 }
