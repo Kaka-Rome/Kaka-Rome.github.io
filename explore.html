@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rommy Artworks</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/explore.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+  
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <div id="marker"></div>
+        <li class="nav-link">
+          <a href="#"><i class="ri-home-4-line"></i></a>
+        </li>
+        <li class="nav-link">
+          <a href="#"><i class="ri-compass-3-line"></i> Explore</a>
+        </li>
+        <li class="nav-link">
+          <a href="#"><i class="ri-user-3-line"></i></a>
+        </li>
+        <div class="nav-link">
+          <a href="#"><i class="ri-information-line"></i></a>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="explore-section">
+    <div class="container">
+      <div class="title-section mt-3 mb-2">
+        <h2 class="title">Explore</h2>
+        <div class="badge badge-secondary">
+          100
+          <div class="icon">
+            <i class="ri-landscape-line"></i>
+          </div>
+        </div>
+      </div>
+      <div class="explore-navigation" id="explore-navigation">
+        <div class="navigation-menu">
+          <div class="search">
+            <div class="icon">
+              <i class="ri-search-line"></i>
+            </div>
+            <input type="text" placeholder="Search collection">
+          </div>
+          <button id="display-grid">
+            <i class="ri-layout-masonry-line"></i>
+          </button>
+        </div>
+        <div class="slider-category owl-carousel owl-theme">
+          <div class="item badge badge-primary">
+            Pet <div class="label">100</div>
+          </div>
+          <div class="item badge badge-primary">
+            Vechicle <div class="label">20</div>
+          </div>
+          <div class="item badge badge-primary">
+            Potrait <div class="label">40</div>
+          </div>
+        </div>
+      </div>
+      <div class="content gallery-wrapper mt-1" id="gallery-wrapper">
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-1.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-2.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-3.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-4.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-5.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-6.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-7.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-8.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-9.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-10.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-11.jpeg" alt="">
+        </div>
+        <div class="item-gallery">
+          <img src="assets/img/gallery/potrait-12.jpeg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="background-layer" id="background-layer"></div>
+    <div class="explore-drawer" id="explore-drawer">
+      <div class="content">
+        <div class="line-grip"></div>
+        <ul>
+          <li>
+            <a id="single" href="#">Single</a>
+          </li>
+          <li>
+            <a id="double" href="#">Double</a>
+          </li>
+          <li>
+            <a id="compact" href="#">Compact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    window.onscroll = function() {myFunction()};
+
+    // Get the navbar
+    var navbar = document.getElementById("explore-navigation");
+
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
+
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+
+    $('.slider-category').owlCarousel({
+        loop:true,
+        margin: 10,
+        nav:false,
+        autoWidth:true,
+        responsive:{
+            0:{
+                items:3
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    })
+
+    let display_grid = $('#display-grid');
+    let drawer = $('#explore-drawer');
+    let bg_layer = $('#background-layer');
+    let single = $('#single');
+    let double = $('#double');
+    let compact = $('#compact');
+    let gallery_wrapper = $('#gallery-wrapper');
+    display_grid.click(function() {
+      // alert("dlicked");
+      display_grid.addClass('animated');
+      bg_layer.addClass('show');
+      drawer.addClass('show');
+      setTimeout(() => {
+        display_grid.removeClass('animated');
+      }, 300);
+    });
+    bg_layer.click(function(){
+      bg_layer.removeClass('show');
+      drawer.removeClass('show');
+    });
+    single.click(function(){
+      gallery_wrapper.removeClass('double');
+      gallery_wrapper.removeClass('compact');
+      gallery_wrapper.addClass('single');
+      setTimeout(() => {
+        bg_layer.removeClass('show');
+        drawer.removeClass('show');
+      }, 200);
+    });
+    double.click(function(){
+      gallery_wrapper.removeClass('single');
+      gallery_wrapper.removeClass('compact');
+      gallery_wrapper.addClass('double');
+      setTimeout(() => {
+        bg_layer.removeClass('show');
+        drawer.removeClass('show');
+      }, 200);
+    });
+    compact.click(function(){
+      gallery_wrapper.removeClass('double');
+      gallery_wrapper.removeClass('single');
+      gallery_wrapper.addClass('compact');
+      setTimeout(() => {
+        bg_layer.removeClass('show');
+        drawer.removeClass('show');
+      }, 200);
+    });
+  </script>
+</body>
+</html>
