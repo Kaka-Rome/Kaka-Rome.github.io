@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,9 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-  
+
 </head>
+
 <body>
   <header>
     <nav class="navbar">
@@ -126,12 +128,14 @@
     </div>
   </section>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+    integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script>
-    window.onscroll = function() {myFunction()};
+    window.onscroll = function () {myFunction()};
 
     // Get the navbar
     var navbar = document.getElementById("explore-navigation");
@@ -149,21 +153,21 @@
     }
 
     $('.slider-category').owlCarousel({
-        loop:true,
-        margin: 10,
-        nav:false,
-        autoWidth:true,
-        responsive:{
-            0:{
-                items:3
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:5
-            }
+      loop: true,
+      margin: 10,
+      nav: false,
+      autoWidth: true,
+      responsive: {
+        0: {
+          items: 3
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5
         }
+      }
     })
 
     let display_grid = $('#display-grid');
@@ -173,7 +177,7 @@
     let double = $('#double');
     let compact = $('#compact');
     let gallery_wrapper = $('#gallery-wrapper');
-    display_grid.click(function() {
+    display_grid.click(function () {
       // alert("dlicked");
       display_grid.addClass('animated');
       bg_layer.addClass('show');
@@ -182,11 +186,11 @@
         display_grid.removeClass('animated');
       }, 300);
     });
-    bg_layer.click(function(){
+    bg_layer.click(function () {
       bg_layer.removeClass('show');
       drawer.removeClass('show');
     });
-    single.click(function(){
+    single.click(function () {
       gallery_wrapper.removeClass('double');
       gallery_wrapper.removeClass('compact');
       gallery_wrapper.addClass('single');
@@ -195,7 +199,7 @@
         drawer.removeClass('show');
       }, 200);
     });
-    double.click(function(){
+    double.click(function () {
       gallery_wrapper.removeClass('single');
       gallery_wrapper.removeClass('compact');
       gallery_wrapper.addClass('double');
@@ -204,7 +208,7 @@
         drawer.removeClass('show');
       }, 200);
     });
-    compact.click(function(){
+    compact.click(function () {
       gallery_wrapper.removeClass('double');
       gallery_wrapper.removeClass('single');
       gallery_wrapper.addClass('compact');
@@ -215,4 +219,5 @@
     });
   </script>
 </body>
+
 </html>
