@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
   <script>
-    var config = '/config/index.json';
+    var config = window.location.origin + '/config/index.json';
     var gallery = [];
 
     $.getJSON(config, function(data) {  
