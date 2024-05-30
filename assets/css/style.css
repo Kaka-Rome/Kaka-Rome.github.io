@@ -153,6 +153,10 @@ a:hover{
   height: 100vh;
 }
 
+.start-gallery{
+  display: none;
+}
+
 .section-gallery .container{
   
 }
@@ -201,6 +205,11 @@ a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.throw-hide{
+  position: absolute !important;
+  left: -1000px !important;
 }
 
 .section-contact .card-contact{

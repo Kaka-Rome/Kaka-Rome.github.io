@@ -41,6 +41,7 @@
   <section class="section-gallery">
     <div class="container">
       <div class="gallery-wrapper" id="gallery-wrapper">
+        <div class="start-gallery"></div>
         <div class="item-gallery">
           <img src="/assets/img/gallery/potraits/1.jpeg" alt="">
         </div>
@@ -48,7 +49,7 @@
     </div>
   </section>
 
-  <section class="section-contact">
+  <section class="section-contact throw-hide">
     <div class="card-contact">
       <h1>Contact Me</h1>
       <p>
@@ -63,7 +64,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer throw-hide">
     <div class="copyright text-center text-muted small">
       Made by &MediumSpace;
       <a href="https://github.com/randy-ar">
@@ -80,9 +81,9 @@
 
   <script>
     function render_gallery(gallery, category = '', first_load = false){
-      $('.section-gallery').height(function(index, height){
-        return height + 1000;
-      });
+      // $('.section-gallery').height(function(index, height){
+      //   return height + 1000;
+      // });
 
       $('#gallery-wrapper').html('');
       let html = ``;
@@ -113,24 +114,34 @@
       });
       $('#gallery-wrapper').html(html).promise().done(function (){
         $('#results').html(`Show ${results} results`);
-        let timeout = 300;
-        if(first_load){
-          timeout = 3000;
-        }
-        setTimeout(() => {
-          ScrollReveal({
-            reset: true
-          })
-          .reveal('.item-gallery', {
-            delay: 500,
-            scale: 0.6
-          });
-        }, 300);
-        setTimeout(() => {
-          $('.section-gallery').height(function(index, height){
-            return height + $('#gallery-wrapper').height() - $('.section-gallery .container').height();
-          });
-        }, timeout);
+        $(window).on('load', function(){
+          let timeout = 300;
+          if(first_load){
+            timeout = 3000;
+          }
+          setTimeout(() => {
+            ScrollReveal({
+              reset: true
+            })
+            .reveal('.item-gallery', {
+              delay: 500,
+              scale: 0.6
+            });
+          }, 300);
+          setTimeout(() => {
+            // $('.section-gallery').height(function(index, height){
+            //   return height + $('#gallery-wrapper').height() - $('.section-gallery .container').height();
+            // })
+            $('.section-gallery').css({
+              'height': 'fit-content'
+            }).promise().done(function () {
+              setTimeout(() => {
+                $('.section-contact').removeClass('throw-hide');
+                $('.footer').removeClass('throw-hide');
+              }, 300);
+            });
+          }, timeout);
+        });
       });
     }
 
