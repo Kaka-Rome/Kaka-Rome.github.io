@@ -1,1 +1,3 @@
 disini folder boats
+Ukuran jangan melebihi 1400px
+format file harus jpeg
