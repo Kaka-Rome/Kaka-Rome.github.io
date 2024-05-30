@@ -75,7 +75,7 @@
 
 
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
-
+  <script src="https://raw.githubusercontent.com/alexanderdickson/waitForImages/master/dist/jquery.waitforimages.min.js"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
 
 
@@ -114,12 +114,12 @@
       });
       $('#gallery-wrapper').html(html).promise().done(function (){
         $('#results').html(`Show ${results} results`);
-        $(window).on('load', function(){
+        // $('#gallery-wrapper').load($(this).attr("href"), function(){
           let timeout = 300;
           if(first_load){
             timeout = 3000;
           }
-          setTimeout(() => {
+          window.setTimeout(() => {
             ScrollReveal({
               reset: true
             })
@@ -128,21 +128,21 @@
               scale: 0.6
             });
           }, 300);
-          setTimeout(() => {
+          window.setTimeout(() => {
             // $('.section-gallery').height(function(index, height){
             //   return height + $('#gallery-wrapper').height() - $('.section-gallery .container').height();
             // })
             $('.section-gallery').css({
               'height': 'fit-content'
             }).promise().done(function () {
-              setTimeout(() => {
+              window.setTimeout(() => {
                 $('.section-contact').removeClass('throw-hide');
                 $('.footer').removeClass('throw-hide');
               }, 300);
             });
           }, timeout);
         });
-      });
+      // });
     }
 
 
