@@ -15,17 +15,6 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
-  <script>
-    var config = '/config/index.json';
-    var gallery = [];
-
-    $.getJSON(config, function(data) {  
-      gallery = data.gallery;
-    }).done(function () {
-      console.log(gallery);
-    });
-  </script>
-
 </head>
 <body>
   <section class="section-header">
@@ -37,13 +26,24 @@
   </section>
 
   <script>
-    $('.main-title').html(
-      gallery
-    )
-  
-    $('.main-title').after(`
-    <a href="/config/index.json">config</a>
-    `)
+    var config = 'https://kaka-rome.github.io/config/index.json';
+    var gallery = [];
+
+    $.getJSON(config, function(data) {  
+      gallery = data.gallery;
+    }).done(function () {
+      console.log(gallery);
+      $('.main-title').before(
+        JSON.stringify(gallery)
+      )
+    
+      $('.main-title').after(`
+      <a href="/config/index.json">config</a>
+      `)
+      });
+  </script>
+  <script>
+   
   </script>
 
 
