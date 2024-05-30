@@ -19,6 +19,11 @@
       "category": "Others",
       "folder": "/assets/img/gallery/others",
       "total_image": 10
+    },
+     {
+      "category": "Bitmap",
+      "folder": "/assets/img/gallery/bitmap",
+      "total_image": 1
     }
   ]
 }
