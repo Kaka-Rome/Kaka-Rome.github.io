@@ -15,10 +15,6 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
-  <script>
-
-  </script>
-
 </head>
 <body>
   <section class="section-header">
@@ -28,25 +24,6 @@
       </div>
     </div>
   </section>
-
-  <script>
-    var config = window.location.origin + '/config/index.json';
-    var gallery = [];
-
-    $.getJSON(config, function(data) {  
-      gallery = data.gallery;
-    }).done(function () {
-      console.log(gallery);
-      $('.main-title').before(
-        JSON.stringify(gallery)
-      )
-    
-      $('.main-title').after(`
-      <a href="/config/index.json">config</a>
-      `)
-    });
-  </script>
-
 
   <section class="section-nav">
     <div class="nav-btn-container">
@@ -157,47 +134,59 @@
       });
     }
 
-    $('#button-All').after(function () {
-      let html = ``;
-      gallery.forEach(item => {
-        html += `
-          <button class="btn-nav" id="button-${item.category}">
-            ${item.category}
-          </button>
-        `;
-      });
-      return html;
-    }).promise().done(function() {
-      gallery.forEach(current_item => {
-        $(`#button-${current_item.category}`).click(function(){
-          console.log("clicked");
-          render_gallery(gallery, current_item.category);
-          $('.btn-nav').each(function(){
-            $(this).removeClass('active');
+
+    // MAIN PROGRAM GOES HERE
+    var config = window.location.origin + '/config/index.json';
+    var gallery = [];
+
+    $.getJSON(config, function(data) {  
+      gallery = data.gallery;
+    }).done(function () {
+      console.log(gallery);
+      
+      // AFTER LOAD JSON
+      $('#button-All').after(function () {
+        let html = ``;
+        gallery.forEach(item => {
+          html += `
+            <button class="btn-nav" id="button-${item.category}">
+              ${item.category}
+            </button>
+          `;
+        });
+        return html;
+      }).promise().done(function() {
+        gallery.forEach(current_item => {
+          $(`#button-${current_item.category}`).click(function(){
+            console.log("clicked");
+            render_gallery(gallery, current_item.category);
+            $('.btn-nav').each(function(){
+              $(this).removeClass('active');
+            });
+            $(`#button-${current_item.category}`).addClass('active');
           });
-          $(`#button-${current_item.category}`).addClass('active');
         });
       });
-    });
 
-    $(`#button-All`).click(function(){
-      render_gallery(gallery);
-      $('.btn-nav').each(function(){
-        $(this).removeClass('active');
+      $(`#button-All`).click(function(){
+        render_gallery(gallery);
+        $('.btn-nav').each(function(){
+          $(this).removeClass('active');
+        });
+        $(`#button-All`).addClass('active');
       });
-      $(`#button-All`).addClass('active');
+
+      render_gallery(gallery, '');
+
+      $('#btn-whatsapp').on('click', function(e){
+        e.preventDefault(); 
+        let url = `https://wa.me/6289696355589`;
+        if($('#message').val() != ""){
+          url += `?text=${$('#message').val()}`;
+        }
+        window.open(url, '_blank')
+      }); 
     });
-
-    render_gallery(gallery, '');
-
-    $('#btn-whatsapp').on('click', function(e){
-      e.preventDefault(); 
-      let url = `https://wa.me/6289696355589`;
-      if($('#message').val() != ""){
-        url += `?text=${$('#message').val()}`;
-      }
-      window.open(url, '_blank')
-    }); 
   </script>
 </body>
 </html>
