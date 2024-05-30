@@ -1,1 +1,3 @@
 upload thumbnail boat disini
+Ukuran Thumbnail harus 200 x 200
+format file harus jpeg 
