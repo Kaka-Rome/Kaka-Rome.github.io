@@ -36,10 +36,12 @@ $(() => {
     let a = $(anchor)[0];
     console.log(anchor, a, a.hash);
     $('section').css({
-      display: 'none'
+      left: '-100vw',
+      opacity: 0
     });
     $(a.hash).css({
-      display: 'block',
+      left: 0,
+      opacity: 1
     });
     if(a.hash == '#explore'){
       var num = $('.title-section').outerHeight(); //number of pixels before modifying styles

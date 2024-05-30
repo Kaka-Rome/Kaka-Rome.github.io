@@ -1,0 +1,24 @@
+{
+  "gallery": [
+    {
+      "category": "Cars",
+      "folder": "/assets/img/gallery/cars",
+      "total_image": 7
+    },
+    {
+      "category": "Pets",
+      "folder": "/assets/img/gallery/pets",
+      "total_image": 8
+    },
+    {
+      "category": "Potraits",
+      "folder": "/assets/img/gallery/potraits",
+      "total_image": 12
+    },
+    {
+      "category": "Others",
+      "folder": "/assets/img/gallery/others",
+      "total_image": 10
+    }
+  ]
+}
