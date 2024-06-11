@@ -43,7 +43,7 @@
       <div class="gallery-wrapper" id="gallery-wrapper">
         <div class="start-gallery"></div>
         <div class="item-gallery">
-          <img src="/assets/img/gallery/potraits/1.jpeg" alt="">
+          <img src="/assets/img/gallery/potraits/1.jpeg" alt="" loading="lazy">
         </div>
       </div>
     </div>
@@ -81,10 +81,6 @@
 
   <script>
     function render_gallery(gallery, category = '', first_load = false){
-      // $('.section-gallery').height(function(index, height){
-      //   return height + 1000;
-      // });
-
       $('#gallery-wrapper').html('');
       let html = ``;
       let results = 0;
@@ -94,7 +90,7 @@
           for (let index = 1; index <= item.total_image; index++) {
             html += `
               <div class="item-gallery item-gallery-${item.category}">
-                <img src="${item.folder}/thumbnail/${index}.jpeg" alt="${item.category}-${index}.jpeg">
+                <img src="${item.folder}/thumbnail/${index}.jpeg" alt="${item.category}-${index}.jpeg" loading="lazy">
               </div>
             `;
             results += 1;
@@ -104,7 +100,7 @@
             for (let index = 1; index <= item.total_image; index++) {
               html += `
                 <div class="item-gallery item-gallery-${item.category}">
-                  <img src="${item.folder}/thumbnail/${index}.jpeg" alt="${item.category}-${index}.jpeg">
+                  <img src="${item.folder}/thumbnail/${index}.jpeg" alt="${item.category}-${index}.jpeg" loading="lazy">
                 </div>
               `;
               results += 1;
@@ -113,36 +109,22 @@
         }
       });
       $('#gallery-wrapper').html(html).promise().done(function (){
-        $('#results').html(`Show ${results} results`);
-        // $('#gallery-wrapper').load($(this).attr("href"), function(){
-          let timeout = 300;
-          if(first_load){
-            timeout = 3000;
-          }
-          window.setTimeout(() => {
-            ScrollReveal({
-              reset: true
-            })
-            .reveal('.item-gallery', {
-              delay: 500,
-              scale: 0.6
-            });
-          }, 300);
-          window.setTimeout(() => {
-            // $('.section-gallery').height(function(index, height){
-            //   return height + $('#gallery-wrapper').height() - $('.section-gallery .container').height();
-            // })
-            $('.section-gallery').css({
-              'height': 'fit-content'
-            }).promise().done(function () {
-              window.setTimeout(() => {
-                $('.section-contact').removeClass('throw-hide');
-                $('.footer').removeClass('throw-hide');
-              }, 300);
-            });
-          }, timeout);
-        });
-      // });
+      $('#results').html(`Show ${results} results`);
+        let timeout = 300;
+        if(first_load){
+          timeout = 3000;
+        }
+        window.setTimeout(() => {
+          $('.section-gallery').css({
+            'height': 'fit-content'
+          }).promise().done(function () {
+            window.setTimeout(() => {
+              $('.section-contact').removeClass('throw-hide');
+              $('.footer').removeClass('throw-hide');
+            }, 300);
+          });
+        }, timeout);
+      });
     }
 
 

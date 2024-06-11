@@ -27,6 +27,13 @@ a:hover{
   color: var(--pacific-blue);
 }
 
+.d-block{
+  display: block;
+}
+.d-none{
+  display: none;
+}
+
 /* ============================ SCROLL BAR ========================== */
 
 /* width */
@@ -197,6 +204,11 @@ a:hover{
   height: auto !important;
   border-radius: 6px;
   object-fit: cover;
+  transition: all .3s;
+}
+
+.gallery-wrapper .item-gallery img:hover{
+  transform: scale(1.1);
 }
 
 /* ============================ Contact ================================ */
