@@ -41,12 +41,19 @@
 html, body {
   max-width: 100% !important;
   overflow-x: hidden !important;
+  caret-color: transparent;
 }
 h1, h2, h3, h4, h5, h6{
   font-family: 'Roboto Slab', sans-serif;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 p{
   font-size: var(--font-size-small);
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 img{
   width: 100%;
@@ -58,6 +65,40 @@ img{
 }
 
 
+/* ============================ SCROLL BAR ========================== */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--silver);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--dark);
+  border-radius: 5px;
+  transition: all .3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+.content-wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-wrapper .content{
+  flex: 1;
+}
+
+
 
 /* ============================= NAVBAR =============================== */
 .nav{
@@ -65,7 +106,7 @@ img{
   justify-content: space-between;
   align-items: center;
   padding: 0px var(--space-large);
-  height: 80px;
+  height: 60px;
   width: 100%;
   background-color: white;
   transition: all .3s ease-out;
@@ -88,8 +129,8 @@ img{
 #menu-toggle input
 {
   display: block;
-  width: 40px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   position: absolute;
   top: 0;
   left: 0px;
@@ -216,6 +257,7 @@ img{
   text-decoration: none;
   color: var(--text-color);
   font-size: var(--space-large);
+  font-weight: 300;
 }
 
 .sticky {
@@ -267,6 +309,7 @@ img{
   border-radius: 6px;
   margin-bottom: var(--space-small);
   transition: all 3s;
+  border: solid 1px var(--silver);
 }
 .gallery-wrapper .item-gallery img{
   overflow-clip-margin: content-box;
@@ -332,8 +375,8 @@ img{
   background-image: url('./../img/icon/fivver.svg');
   background-position: center;
   background-size: contain;
-  width: calc(var(--icon-size-small) - 1px);
-  height: calc(var(--icon-size-small) - 1px);
+  width: calc(var(--icon-size-small) - 4px);
+  height: calc(var(--icon-size-small) - 4px);
   background-repeat: no-repeat;
 }
 .behance-ico{
@@ -348,8 +391,8 @@ img{
   background-image: url('./../img/icon/thumblr.svg');
   background-position: center;
   background-size: contain;
-  width: calc(var(--icon-size-small) - 1px);
-  height: calc(var(--icon-size-small) - 1px);
+  width: calc(var(--icon-size-small) - 4px);
+  height: calc(var(--icon-size-small) - 4px);
   background-repeat: no-repeat;
 }
 .cara-ico{
@@ -394,6 +437,8 @@ img{
   background-color: var(--silver);
   padding: var(--space-small);
   font-size: var(--font-size-small);
+  caret-color: var(--text-color);
+  caret-shape: underscore;
 }
 
 .contact-section textarea:focus-within{
@@ -537,7 +582,13 @@ img{
   /* ============================= NAVBAR =============================== */
   .nav{
     padding: 0px var(--space-xl-large);
+    height: 80px;
   }
+
+  .nav-brand img{
+    height: 80px;
+  }
+
   #menu-toggle{
     display: none;
   }
@@ -563,6 +614,7 @@ img{
   }
   .nav-item a{
     font-size: var(--font-size-large);
+    font-weight: 400;
   }
 
   /* ============================= Illustration =============================== */
@@ -597,16 +649,16 @@ img{
     height: calc(var(--icon-size-medium) - 4px);
   }
   .fivver-ico{
-    width: calc(var(--icon-size-medium) - 1px);
-    height: calc(var(--icon-size-medium) - 1px);
+    width: calc(var(--icon-size-medium) - 4px);
+    height: calc(var(--icon-size-medium) - 4px);
   }
   .behance-ico{
     width: calc(var(--icon-size-medium) - 4px);
     height: calc(var(--icon-size-medium) - 4px);
   }
   .thumblr-ico{
-    width: calc(var(--icon-size-medium) - 1px);
-    height: calc(var(--icon-size-medium) - 1px);
+    width: calc(var(--icon-size-medium) - 4px);
+    height: calc(var(--icon-size-medium) - 4px);
   }
   .cara-ico{
     width: calc(var(--icon-size-medium) - 4px);
@@ -722,16 +774,16 @@ img{
     height: calc(var(--icon-size-large) - 4px);
   }
   .fivver-ico{
-    width: calc(var(--icon-size-large) - 1px);
-    height: calc(var(--icon-size-large) - 1px);
+    width: calc(var(--icon-size-large) - 4px);
+    height: calc(var(--icon-size-large) - 4px);
   }
   .behance-ico{
     width: calc(var(--icon-size-large) - 4px);
     height: calc(var(--icon-size-large) - 4px);
   }
   .thumblr-ico{
-    width: calc(var(--icon-size-large) - 1px);
-    height: calc(var(--icon-size-large) - 1px);
+    width: calc(var(--icon-size-large) - 4px);
+    height: calc(var(--icon-size-large) - 4px);
   }
   .cara-ico{
     width: calc(var(--icon-size-large) - 4px);
@@ -753,6 +805,7 @@ img{
     margin-right: none;
     width: 100%;
     height: 100%;
+    font-size: var(--font-size-large);
   }
   .contact-section p{
     margin-bottom: var(--space-medium);

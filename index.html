@@ -17,22 +17,11 @@
     </div>
     <div id="menu-toggle">
       <input type="checkbox">
-      
-      <!--
-      Some spans to act as a hamburger.
-      
-      They are acting like a real hamburger,
-      not that McDonalds stuff.
-      -->
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <!-- <button type="button" class="nav-toggler" id="nav-toggler">
-      <i class="ri-menu-fill"></i>
-    </button> -->
     <div class="nav-content" id="nav-content">
-      <!-- <button type="button" class="close" id="nav-close"><i class="ri-close-fill"></i></button> -->
       <ul class="nav-menu" id="nav-menu">
         <li class="nav-item"><a href="#illustration">Illustration</a></li>
         <li class="nav-item"><a href="#about">About</a></li>
@@ -41,18 +30,9 @@
     </div>
   </nav>
 
-  <!-- <div class="nav-menu-mobile">
-    <ul class="nav-menu-content">
-      <li class="nav-item"><a href="#">Illustration</a></li>
-      <li class="nav-item"><a href="#">About</a></li>
-      <li class="nav-item"><a href="#">Contact</a></li>
-    </ul>
-  </div> -->
-
   <section class="illustration-section" id="illustration">
     <h1 class="display">Feature Works</h1>
     <div class="gallery-wrapper">
-      <div class="item-gallery"><img src="/assets/img/illustrations/thumbnails/1.jpg" alt="Artwork-1"></div>
       <div class="item-gallery"><img src="https://dummyimage.com/500x333/25282A/e4e4e2&text=+++Coming+Soon+++" alt="500x333"></div>
       <div class="item-gallery"><img src="https://dummyimage.com/500x750/25282A/e4e4e2&text=+++Coming+Soon+++" alt="500x750"></div>
       <div class="item-gallery"><img src="https://dummyimage.com/500x333/25282A/e4e4e2&text=+++Coming+Soon+++" alt="500x333"></div>
@@ -78,12 +58,12 @@
     <img class="img-profile" src="/assets/img/about/profile.jpeg" alt="profile-img">
     <p>Hello! I'm Kaka, and I'm from West Java, Indonesia. I got my start as a Designer by creating vector art. Since 2020 I started it all. I began designing vector for wall décor, design for t-shirts, stickers, printed on wood and other types of printing needs. I am open to all kinds of vector work, like Animals vector, Persons vector, Vehicles vector, etc. I would love to work with a brand that shares these values. I am also open to long-term partnership! If you like my work or if you have any question, please feel free to reach out by filling in the contact form!</p>
     <div class="social-media">
-      <div class="social-link"><a href="#"><i class="fivver-ico"></i></a></div>
-      <div class="social-link"><a href="#"><i class="cara-ico"></i></a></div>
-      <div class="social-link"><a href="#"><i class="upwork-ico"></i></a></div>
-      <div class="social-link"><a href="#"><i class="behance-ico"></i></a></div>
-      <div class="social-link"><a href="#"><i class="thumblr-ico"></i></a></div>
-      <div class="social-link"><a href="#"><i class="ri-pinterest-fill"></i></a></div>
+      <div class="social-link"><a id="fiverr" href="#"><i class="fivver-ico"></i></a></div>
+      <div class="social-link"><a id="cara" href="#"><i class="cara-ico"></i></a></div>
+      <div class="social-link"><a id="upwork" href="#"><i class="upwork-ico"></i></a></div>
+      <div class="social-link"><a id="behance" href="#"><i class="behance-ico"></i></a></div>
+      <div class="social-link"><a id="thumblr" href="#"><i class="thumblr-ico"></i></a></div>
+      <div class="social-link"><a id="pinterest" href="#"><i class="ri-pinterest-fill"></i></a></div>
     </div>
   </section>
 
@@ -93,16 +73,17 @@
     <div class="contact-content">
       <p>Hit me up on WhatsApp anytime!</p>
       <textarea name="message" id="message" placeholder="Type your message here.."></textarea>
-      <button type="button"><i class="ri-whatsapp-line"></i> Send Message</button>
+      <button type="button" id="button-whatsapp"><i class="ri-whatsapp-line"></i> Send Message</button>
+      <a style="display: none;" href="#" id="whatsapp"></a>
     </div>
     <div class="contact-side-content">
       <div class="other-contact-content">
         <p>Also on:</p>
         <ul>
-          <li><a href="#"><i class="ri-mail-fill"></i><span>rommy@gmail.com</span></a></li>
-          <li><a href="#"><i class="ri-instagram-fill"></i><span>@rommy-instagram</a></span></li>
-          <li><a href="#"><i class="ri-facebook-circle-fill"></i><span>@rommy-facebook</a></span></li>
-          <li><a href="#"><i class="ri-telegram-fill"></i><span>@rommy-telegram</a></span></li>
+          <li><a id="email" href="#"><i class="ri-mail-fill"></i><span>rommy@gmail.com</span></a></li>
+          <li><a id="instagram" href="#"><i class="ri-instagram-fill"></i><span>@rommy-instagram</a></span></li>
+          <li><a id="facebook" href="#"><i class="ri-facebook-circle-fill"></i><span>@rommy-facebook</a></span></li>
+          <li><a id="telegram" href="#"><i class="ri-telegram-fill"></i><span>@rommy-telegram</a></span></li>
         </ul>
       </div>
       <div class="payment-content">
@@ -119,86 +100,198 @@
   </section>
 
   <footer class="footer">
-    <div class="copyright">© 2024 Kaka Rome. All Rights Reserved.</div>
+    <div class="copyright">© <span>2020</span> Kaka Rome. All Rights Reserved.</div>
     <div class="made-by">
       Made by <a href="https://github.com/randy-ar" target="_blank" ><i class="ri-github-line"></i> randy-ar</a>
     </div>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
   <script>
-    window.onscroll = function() {myFunction()};
+    const config_path = `${window.location.origin}/config/index.json`;
+    const origin = window.location.origin;
 
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
+    function read_config(config_path) {
+      return new Promise((resolve, reject) => {
+        axios.get(config_path)
+          .then(data => data.data)
+          .then(config => {
+            if(config != null){
+              return resolve(config);
+            }else{
+              return reject(null);
+            }
+          });
+      });  
+    }
 
-    function myFunction() {
-      if (window.pageYOffset >= sticky + 4) {
-        navbar.classList.add("sticky")
+    function render_image(config_file){
+      $('.gallery-wrapper').html('');
+      return new Promise((resolve, reject) => {
+        try {
+          let html = ``;
+          for (let index = 1; index <= config_file.config.illustrations.total_image; index++) {
+            html += `<div class="item-gallery"><img src="${origin}${config_file.config.illustrations.original_path}/${index}.jpeg" alt="Artwork-${index}"></div>`;
+          }
+          // Resolve condition
+          $('.gallery-wrapper').html(html).ready(() => {
+            resolve("finish render");
+          });
+        } catch (err) {
+          reject(err);
+        }
+      });
+    }
+
+    function filter_link_to_username(link){
+      if (link.startsWith("mailto: ")) {
+        return link.replace("mailto: ", "");
+      } else if (link.startsWith("https://www.instagram.com/")) {
+        return link.replace("https://www.instagram.com/", "@");
+      } else if (link.startsWith("https://www.facebook.com/")) {
+        return link.replace("https://www.facebook.com/", "@");
+      } else if (link.startsWith("https://t.me/")) {
+        return link.replace("https://t.me/", "@");
       } else {
-        navbar.classList.remove("sticky");
+        return link;
       }
     }
 
-    $(function(){
+    function render_link(config_file){
+      return new Promise((resolve, reject) => {
+        try {
+          config_file.config.links.forEach(item => {
+            $(`#${item.type}`).attr({
+              "href": item.link,
+              "target": '__blank'
+            });
+            $(`#${item.type} span`).html(`${filter_link_to_username(item.link)}`);
+          });
+          resolve("finish render");
+        } catch (error) {
+          reject(error)
+        }
+      })
+    }
 
-      // ================================== Scroll reveal ==================================
-      const sr = ScrollReveal({
-        origin: 'top',
-        distance: '60px',
-        duration: 2500,
-        delay: 400,
-      });
+    async function run_read_config(config_path) {
+      let config = await read_config(config_path);
+      return config;
+    }
 
-      ScrollReveal().reveal('.item-gallery', { 
-        delay: 300, 
-        easing: 'ease-out', 
-        duration: 500, 
-        scale: .8,
-        reset: true
-      });
+    async function run_render_image(config_file){
+      let render = await render_image(config_file);
+      return render;
+    }
 
-      sr.reveal('.about-section');
-      sr.reveal('.contact-section h1', {origin: 'left'});
-      sr.reveal('.contact-section .contact-content', {origin: 'left'});
-      sr.reveal('.contact-section .contact-side-content', {origin: 'right'});
+    async function run_render_link(config_file){
+      let render = await render_link(config_file);
+      return render;
+    }
 
-      // ================================== Navbar ==================================
 
-      $('#menu-toggle').on('click', ()=>{
-        if($('#menu-toggle input').is(':checked')){
-          $('#nav-content').addClass('nav-show');
-          $('#nav-menu').addClass('nav-menu-show');
-          $('#navbar').addClass('sticky');
-        }else{
-          $('#nav-content').removeClass('nav-show');
-          $('#nav-menu').removeClass('nav-menu-show');
+    // ================================== Read Config File ==================================
+    let result = run_read_config(config_path);
+    result.then((config_file) => {
+      console.log(config_file);
+      $(function(){
+
+        let render_illust = run_render_image(config_file);
+
+        render_illust.then(() => {
+          // ================================== Scroll reveal ==================================
+          const sr = ScrollReveal({
+            origin: 'top',
+            distance: '60px',
+            duration: 2500,
+            delay: 400,
+          });
+
+          ScrollReveal().reveal('.item-gallery', { 
+            delay: 300, 
+            easing: 'ease-out', 
+            duration: 500, 
+            scale: .8,
+            reset: true
+          });
+
+          sr.reveal('.about-section');
+          sr.reveal('.contact-section h1', {origin: 'left'});
+          sr.reveal('.contact-section .contact-content', {origin: 'left'});
+          sr.reveal('.contact-section .contact-side-content', {origin: 'right'});
+        }, (err) => {
+          console.error(err);
+          $('.gallery-wrapper').after(`<p style="text-align: center;"> Illustrations not yet available</p>`);
+        });
+
+        // ================================== Navbar ==================================
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+          if (window.pageYOffset >= sticky + 4) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+        
+        $('#menu-toggle').on('click', ()=>{
+          if($('#menu-toggle input').is(':checked')){
+            $('#nav-content').addClass('nav-show');
+            $('#nav-menu').addClass('nav-menu-show');
+            $('#navbar').addClass('sticky');
+          }else{
+            $('#nav-content').removeClass('nav-show');
+            $('#nav-menu').removeClass('nav-menu-show');
+          }
+        });
+
+        sections  = $('section')
+        for(ind in sections){
+          section = sections[ind];
+
+          $('a[href^="#'+section.id+'"]').on('click', function (e) {
+              e.preventDefault();
+              var target = this.hash,
+                  $target = $(target);
+
+              console.log($(window).width());
+              if($(window).width() < 641){
+                $('#menu-toggle input').click(); // Unchecks it
+              }
+
+              $('html, body').stop().animate({
+                  'scrollTop': $target.offset().top - 100
+              }, 400, 'swing', function () {
+                  // window.location.hash = target;
+              });
+          });
         }
       });
 
-      sections  = $('section')
-      for(ind in sections){
-        section = sections[ind];
-        $('a[href^="#'+section.id+'"]').on('click', function (e) {
-            e.preventDefault();
-            var target = this.hash,
-                $target = $(target);
+      // ================================== Links ==================================
+      let redered_link = run_render_link(config_file);
+      redered_link.then(() => {}, (err) => { console.error(err) })
+      $('#button-whatsapp').on("click", (e) => {
+        e.preventDefault(); 
+        let url = $('#whatsapp').attr("href");
+        if($('#message').val() != ""){
+          url += `?text=${$('#message').val()}`;
+        }
+        window.open(url, '_blank')
+      });
 
-
-            console.log($(window).width());
-            if($(window).width() < 641){
-              $('#menu-toggle input').click(); // Unchecks it
-            }
-            
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top - 100
-            }, 400, 'swing', function () {
-                // window.location.hash = target;
-            });
-        });
-      }
-
+      // ================================== Footer ==================================
+      let currentYear = new Date().getFullYear()
+      $('.footer .copyright span').html(currentYear);
     });
+
   </script>
 </body>
 </html>

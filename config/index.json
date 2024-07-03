@@ -1,22 +1,55 @@
 {
   "config": {
-    "links": {
-      "email": "karome.project@gmail.com",
-      "telegram": "t.me/kakarome",
-      "behance": "https://www.behance.net/kakarome",
-      "facebook": "https://www.facebook.com/romy.firmansyah.505",
-      "instagram": "https://www.instagram.com/kkromeee",
-      "thumblr": "https://www.tumblr.com/kkromee",
-      "pinterest": "https://pin.it/1vGsrT4x7",
-      "whatsapp": "https://wa.me/message/FTSCYI67PMBLE1",
-      "cara": "https://cara.app/k2vexel",
-      "fivver": "fiverr.com/k2vexel",
-      "upwork": "https://www.upwork.com/freelancers/~01a4c4465c86a5588a"
-    },
+    "links": [
+      {
+        "type": "email",
+        "link": "mailto: karome.project@gmail.com"
+      },
+      {
+        "type": "telegram", 
+        "link": "https://t.me/kakarome"
+      },
+      {
+        "type": "behance", 
+        "link": "https://www.behance.net/kakarome"
+      },
+      {
+        "type": "facebook", 
+        "link": "https://www.facebook.com/romy.firmansyah.505"
+      },
+      {
+        "type": "instagram", 
+        "link": "https://www.instagram.com/kkromeee"
+      },
+      {
+        "type": "thumblr", 
+        "link": "https://www.tumblr.com/kkromee"
+      },
+      {
+        "type": "pinterest", 
+        "link": "https://pin.it/1vGsrT4x7"
+      },
+      {
+        "type": "whatsapp", 
+        "link": "https://wa.me/6289651620404"
+      },
+      {
+        "type": "cara", 
+        "link": "https://cara.app/k2vexel"
+      },
+      {
+        "type": "fiverr", 
+        "link": "https://fiverr.com/k2vexel"
+      },
+      {
+        "type": "upwork", 
+        "link": "https://www.upwork.com/freelancers/~01a4c4465c86a5588a"
+      }
+    ],
     "illustrations":{
       "original_path": "/assets/img/illustrations",
       "thumbnail_path": "/assets/img/illustrations/thumbnails",
-      "total_image": 12
+      "total_image": 8
     }
   }
 }
