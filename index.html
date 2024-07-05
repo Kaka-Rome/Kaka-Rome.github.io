@@ -431,11 +431,11 @@
                 $('.modal').addClass('show');
               });
             });
-            $('body').addClass('hide-scroll');
+            $('html, body').addClass('hide-scroll');
         });
         $('.modal-dialog').click(function(e) {
           $(this).parent().removeClass('show');
-          $('body').removeClass('hide-scroll');
+          $('html, body').removeClass('hide-scroll');
         });
         $('#img-next').click(function(){
           let image_detail = run_read_image_detail(image_detail_path);
