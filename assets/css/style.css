@@ -355,6 +355,7 @@ img{
   transition: all 3s;
   border: solid 1px var(--silver);
   position: relative;
+  cursor: pointer;
 }
 .gallery-wrapper .item-gallery img{
   overflow-clip-margin: content-box;
