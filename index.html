@@ -141,7 +141,7 @@
   <section class="about-section" id="about">
     <h1 class="display">About</h1>
     <img class="img-profile" src="/assets/img/about/profile.jpeg" alt="profile-img">
-    <p>Hello! I'm Kaka, and I'm from West Java, Indonesia. I got my start as a Designer by creating vector art. Since 2020 I started it all. I began designing vector for wall décor, design for t-shirts, stickers, printed on wood and other types of printing needs. I am open to all kinds of vector work, like Animals vector, Persons vector, Vehicles vector, etc. I would love to work with a brand that shares these values. I am also open to long-term partnership! If you like my work or if you have any question, please feel free to reach out by filling in the contact form!</p>
+    <p id="about-description">Hey! I'm Kaka from West Java, Indonesia. I started designing vector art in 2020, creating pieces for wall décor, mug prints, stickers, and wood prints. I can do all sorts of vector work, like animals, people, and automotive. And also make illustrations for various things like t-shirts and posters, etc. I'm excited to work with brands that share my vibes and I am open to long-term partnerships. If you like my work or have any questions, please feel free to reach out by filling in the contact form and let's connect!</p>
     <div class="social-media">
       <div class="social-link"><a id="fiverr" href="#"><i class="fivver-ico"></i></a></div>
       <div class="social-link"><a id="cara" href="#"><i class="cara-ico"></i></a></div>
@@ -190,17 +190,21 @@
     </div>
     <div class="modal-content">
       <div class="modal-body">
-        <h4>Artwork-4</h4>
-        <img id="img-modal" src="./assets/img/illustrations/4.jpeg" alt="Artwork-4">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin eu magna id pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <div class="modal-nav">
-          <button type="button" id="img-prev"><i class="ri-arrow-left-line"></i></button>
-          <div class="img-info" id="img-info">
-            <span>4</span> of <span>8</span>
+        <div class="main-content">
+          <h4>Artwork-4</h4>
+          <img id="img-modal" src="./assets/img/illustrations/4.jpeg" alt="Artwork-4">
+        </div>
+        <div class="side-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin eu magna id pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <div class="modal-nav">
+            <button type="button" id="img-prev"><i class="ri-arrow-left-line"></i></button>
+            <div class="img-info" id="img-info">
+              <span>4</span> of <span>8</span>
+            </div>
+            <button type="button" id="img-next"><i class="ri-arrow-right-line"></i></button>
           </div>
-          <button type="button" id="img-next"><i class="ri-arrow-right-line"></i></button>
         </div>
       </div>
     </div>
@@ -426,9 +430,11 @@
                 $('.modal').addClass('show');
               });
             });
+            $('body').addClass('hide-scroll');
         });
         $('.modal-dialog').click(function(e) {
           $(this).parent().removeClass('show');
+          $('body').removeClass('hide-scroll');
         });
         $('#img-next').click(function(){
           let image_detail = run_read_image_detail(image_detail_path);
@@ -454,6 +460,9 @@
             }
           });
         });
+
+        // ================================== About ==================================
+        $('#about-description').html(config_file.config.about.description);
 
 
         // ================================== Navbar ==================================
