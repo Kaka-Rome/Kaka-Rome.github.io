@@ -4,10 +4,11 @@
   --text-color: #1F2020;
   --dark: #25282A;
   --dark-muted: #656767;
+  --dark-hover: #393C3D;
   --silver: #E4E4E2;
   --light: #F9F6EF;
   --muted: #868686;
-  --pacific-blue: #2E4755;
+  --pacific-blue: #0c1113;
   --second-blue: #215E7C;
   --whatsapp: #075E54;
   --whatsapp-hover: #206e65;
@@ -266,6 +267,11 @@ img{
   color: var(--text-color);
   font-size: var(--space-large);
   font-weight: 300;
+  transition: all ease-in .2s;
+}
+
+.nav-item a:hover{
+  color: var(--dark-hover);
 }
 
 .sticky {
@@ -393,7 +399,7 @@ img{
   margin-top: var(--space-large);
 }
 .social-media .social-link{
-  font-size: var(--icon-size-small);  
+  font-size: var(--icon-size-small); 
 }
 .social-media .social-link a{
   display: flex;
@@ -401,6 +407,9 @@ img{
   text-decoration: none;
   justify-content: center;
   height: var(--icon-size-small);
+}
+.social-media .social-link a i{
+  transition: all ease-in .15s; 
 }
 .upwork-ico{
   background-image: url('./../img/icon/upwork.svg');
@@ -501,6 +510,12 @@ img{
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  transition: all ease-out .3s;
+}
+
+.contact-section button:hover{
+  background-color: var(--dark-hover);
+  scale: .99;
 }
 
 .contact-section button i{
@@ -574,6 +589,20 @@ img{
   display: flex;
   justify-content: start;
   align-items: center;
+  position: relative;
+  transition: all ease-in .1s;
+}
+.other-contact-content ul li a:after{
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--dark);
+  width: 70%;
+  transition: all ease-in .3s;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 .other-contact-content ul li a span{
   display: none;
@@ -664,6 +693,12 @@ img{
   border: none;
   border-radius: 30px;
   background-color: var(--dark);
+  transition: all ease-out .3s;
+}
+
+.modal-nav button:hover{
+  background-color: var(--dark-hover);
+  scale: .98;
 }
 
 .modal-nav button.disabled{
@@ -937,6 +972,9 @@ img{
     width: calc(var(--icon-size-large) - 4px);
     height: calc(var(--icon-size-large) - 4px);
   }
+  .social-media .social-link a i:hover{
+    transform: translateY(-10px);
+  }
 
   /* ============================= Contact =============================== */
   .contact-section{
@@ -979,6 +1017,9 @@ img{
   .other-contact-content ul li a i{
     font-size: var(--icon-size-medium);
     margin-right: var(--space-medium);
+  }
+  .other-contact-content ul li a:hover::after{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 
   .payment-list{
