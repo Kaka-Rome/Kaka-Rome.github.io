@@ -476,7 +476,9 @@
           if (window.pageYOffset >= sticky + 4) {
             navbar.classList.add("sticky")
           } else {
-            navbar.classList.remove("sticky");
+            if(!$('#menu-toggle input').is(':checked')){
+              navbar.classList.remove("sticky");
+            }
           }
         }
         
@@ -485,9 +487,11 @@
             $('#nav-content').addClass('nav-show');
             $('#nav-menu').addClass('nav-menu-show');
             $('#navbar').addClass('sticky');
+            $('html, body').addClass('hide-scroll');
           }else{
             $('#nav-content').removeClass('nav-show');
             $('#nav-menu').removeClass('nav-menu-show');
+            $('html, body').removeClass('hide-scroll');
           }
         });
 
