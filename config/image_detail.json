@@ -1,7 +1,7 @@
 {
   "original_path": "/assets/img/illustrations",
   "thumbnail_path": "/assets/img/illustrations/thumbnails",
-  "total_image": 8,
+  "total_image": 9,
   "images": [
     {
       "name": "Artwork-1",
@@ -42,6 +42,10 @@
       "name": "Artwork-8",
       "filename": "8.jpeg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin eu magna id pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
+      "name": "Gryphon",
+      "filename": "9.jpeg",
+      "description": "A majestic blue-green gryphon clings to a sheer cliff face, its powerful claws gripping the rocky surface as it scan the horizon with fierce golden eyes."
     }
   ]
 }
