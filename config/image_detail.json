@@ -1,7 +1,7 @@
 {
   "original_path": "/assets/img/illustrations",
   "thumbnail_path": "/assets/img/illustrations/thumbnails",
-  "total_image": 12,
+  "total_image": 13,
   "images": [
     {
       "name": "Red Cephalopoda",
@@ -61,6 +61,11 @@
     {
       "name": "Artwork-12",
       "filename": "12.jpeg",
+      "description": "DESIGN NOT FOR SALE!"
+    },
+    {
+      "name": "Artwork-13",
+      "filename": "13.jpeg",
       "description": "Stay tuned! An exciting new illustration is about to drop. Coming Soon!"
     }
   ]
