@@ -1,7 +1,7 @@
 {
   "original_path": "/assets/img/illustrations",
   "thumbnail_path": "/assets/img/illustrations/thumbnails",
-  "total_image": 15,
+  "total_image": 16,
   "images": [
     {
       "name": "Red Cephalopoda",
@@ -77,6 +77,11 @@
       "name": "Artwork-15",
       "filename": "15.jpeg",
       "description": "DESIGN NOT FOR SALE!"
+    },
+    {
+      "name": "Atlanta Racing",
+      "filename": "8.jpeg",
+      "description": "DESIGN NOT FOR SALE! Commission work! Illustration of a white Camaro cruising with Atlanta’s stunning skyline in the background."
     }
   ]
 }
