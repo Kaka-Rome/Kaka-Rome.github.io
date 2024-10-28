@@ -1,7 +1,7 @@
 {
   "original_path": "/assets/img/illustrations",
   "thumbnail_path": "/assets/img/illustrations/thumbnails",
-  "total_image": 14,
+  "total_image": 15,
   "images": [
     {
       "name": "Red Cephalopoda",
@@ -72,6 +72,11 @@
       "name": "Retro Style",
       "filename": "14.jpeg",
       "description": "I illustrated this clothing design with Retro Style."
+    },
+    {
+      "name": "Artwork-15",
+      "filename": "15.jpeg",
+      "description": "DESIGN NOT FOR SALE!"
     }
   ]
 }
