@@ -1,7 +1,7 @@
 {
   "original_path": "/assets/img/illustrations",
   "thumbnail_path": "/assets/img/illustrations/thumbnails",
-  "total_image": 13,
+  "total_image": 14,
   "images": [
     {
       "name": "Red Cephalopoda",
@@ -67,6 +67,11 @@
       "name": "Vorrei",
       "filename": "13.jpeg",
       "description": "I illustrated this cover song for Italian singer Anna Turrei, who’s dropping her new single Vorrei. It’s set in Los Angeles, with its iconic beaches running along the beautiful city. The warm colors match the summer vibe of the song, set to release soon."
+    },
+    {
+      "name": "Retro Style",
+      "filename": "14.jpeg",
+      "description": "I illustrated this clothing design with Retro Style."
     }
   ]
 }
