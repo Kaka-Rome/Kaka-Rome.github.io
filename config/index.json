@@ -49,7 +49,7 @@
     "illustrations":{
       "original_path": "/assets/img/illustrations",
       "thumbnail_path": "/assets/img/illustrations/thumbnails",
-      "total_image": 9,
+      "total_image": 16,
       "images":[
         {"name": "Red Cephalopoda", "filename": "1.jpeg"},
         {"name": "Blue Gryphon", "filename": "2.jpeg"},
@@ -65,7 +65,8 @@
         {"name": "Artwork-12", "filename": "12.jpeg"},
         {"name": "Vorrei", "filename": "13.jpeg"},
         {"name": "Retro Style", "filename": "14.jpeg"},
-        {"name": "Artwork-15", "filename": "15.jpeg"}
+        {"name": "Artwork-15", "filename": "15.jpeg"},
+        {"name": "Atlanta Racing", "filename": "16.jpeg"}
       ]
     },
     "about":{
