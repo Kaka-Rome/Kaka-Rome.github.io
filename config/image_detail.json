@@ -1,7 +1,7 @@
 {
   "original_path": "/assets/img/illustrations",
   "thumbnail_path": "/assets/img/illustrations/thumbnails",
-  "total_image": 16,
+  "total_image": 17,
   "images": [
     {
       "name": "Red Cephalopoda",
@@ -54,7 +54,7 @@
       "description": "DESIGN NOT FOR SALE!"
     },
     {
-      "name": "Hirrin",
+      "name": "El Hellcat",
       "filename": "11.jpeg",
       "description": "DESIGN NOT FOR SALE!"
     },
@@ -82,6 +82,11 @@
       "name": "Atlanta Racing",
       "filename": "16.jpeg",
       "description": "DESIGN NOT FOR SALE! Commission work! Illustration of a white Camaro cruising with Atlanta’s stunning skyline in the background."
+    },
+    {
+      "name": "El Camaro",
+      "filename": "17.jpeg",
+      "description": "DESIGN NOT FOR SALE! Commission work!"
     }
   ]
 }
